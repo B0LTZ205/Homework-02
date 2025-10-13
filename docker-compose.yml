@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  NodeChat:
+    image: b0ltz205/nodechat:lts
+    build: .
+    container_name: jschat
+    ports:
+      - "80:3700"
+    environment:
+      - PORT=3700
+    volumes:
+      - ./:/app
+    command: ["npm", "index.js"]
