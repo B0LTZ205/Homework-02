@@ -1,19 +1,4 @@
-#use lightweight Node.js image
-FROM node:18-alpine
-
-#set working directory in container
-WORKDIR /app
-
-
-# Copy package.json and install dependencies
-ADD package*.json ./
-RUN npm install
-
-# Copy rest of the code
-COPY . .
-
-#Expose port 3000
+FROM mhart/alpine-node
+copy . /app
+CMD node /app/index.js
 EXPOSE 3700
-
-#run the app
-CMD ["node", "index.js"]
