@@ -85,7 +85,7 @@ pipeline {
             agent{label 'CWEB-2140-AppServer'}
             steps
             {
-                echo "docker-compose logs"
+                sh 'docker-compose logs'
 
             }
         }
