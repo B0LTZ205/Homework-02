@@ -31,7 +31,8 @@ pipeline {
                              severity:'critical'
                         )
                    }
-              }
+            }
+}
 
     stage('SonarQube Analysis') {
             agent {
